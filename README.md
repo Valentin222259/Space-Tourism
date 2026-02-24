@@ -5,7 +5,7 @@
 
 **Live Demo:** [🌍 Vezi aplicația live pe Vercel](https://piug-alpha.vercel.app/)
 
-A comprehensive solution to the [Space Tourism website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWlf1GfW). This project has been expanded with custom pages (Video, Contact) and built using a robust, type-safe architecture with React and TypeScript, complete with an automated CI/CD pipeline.
+A comprehensive solution to the Space Tourism website challenge on Frontend Mentor. This project has been expanded with custom pages (Video, Contact) and built using a robust, type-safe architecture with React and TypeScript, complete with an automated CI/CD pipeline.
 
 ---
 
