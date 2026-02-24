@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App";
-import { ThemeProvider } from "./ThemeContext.tsx";
+import { ThemeProvider } from "./ThemeProvider/ThemeProvider";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -12,5 +12,5 @@ createRoot(document.getElementById("root")!).render(
         <App />
       </ThemeProvider>
     </BrowserRouter>
-  </StrictMode>
+  </StrictMode>,
 );
