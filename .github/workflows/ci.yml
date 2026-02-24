@@ -1,0 +1,36 @@
+name: Space Tourism CI
+
+# Declanșatori: Când să ruleze acest pipeline?
+on:
+  push:
+    branches: [main] # Rulează la orice push pe branch-ul main
+  pull_request:
+    branches: [main] # Rulează la orice Pull Request către main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest # Folosim o mașină virtuală cu Linux (ca la curs!)
+
+    steps:
+      # 1. Copiem codul din repository pe mașina virtuală
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Instalăm Node.js (versiunea 20 este recomandată pentru proiecte moderne)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm" # Activează cache-ul pentru a face install-ul mai rapid data viitoare
+
+      # 3. Instalăm dependențele (librăriile)
+      - name: Install dependencies
+        run: npm ci # npm ci este mai rapid și mai sigur în pipeline-uri decât npm install
+
+      # 4. Verificăm calitatea codului (Linting)
+      - name: Run Lint
+        run: npm run lint
+
+      # 5. Verificăm dacă proiectul se compilează (Build)
+      - name: Build project
+        run: npm run build
